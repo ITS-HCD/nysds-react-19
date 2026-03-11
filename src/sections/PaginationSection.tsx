@@ -1,27 +1,22 @@
-import { useState, useRef, useCallback } from "react";
-import type { NysPagination } from "@nysds/components";
-import { useCustomEvent } from "../hooks/useCustomEvent";
+import { useState } from "react";
+import {
+  NysPagination,
+  NysDivider,
+} from "@nysds/components/react";
 
 const PaginationSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const paginationRef = useRef<NysPagination>(null);
-
-  useCustomEvent(
-    paginationRef,
-    "nys-change",
-    useCallback((e: CustomEvent) => setCurrentPage(e.detail.page), []),
-  );
 
   return (
     <section id="pagination">
       <h2 className="section-heading">Pagination</h2>
       <p>Current page: {currentPage}</p>
-      <nys-pagination
-        ref={paginationRef}
+      <NysPagination
         totalPages={10}
         currentPage={currentPage}
+        onNysChange={(e: Event) => setCurrentPage((e as CustomEvent).detail.page)}
       />
-      <nys-divider />
+      <NysDivider />
     </section>
   );
 };

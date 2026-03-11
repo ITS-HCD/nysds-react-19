@@ -1,8 +1,12 @@
 import { useRef } from "react";
-import type { NysModal } from "@nysds/components";
+import {
+  NysButton,
+  NysModal,
+  NysDivider,
+} from "@nysds/components/react";
 
 const ModalSection = () => {
-  const modalRef = useRef<NysModal>(null);
+  const modalRef = useRef< {open: Boolean} | null >(null);
 
   const openModal = () => {
     if (modalRef.current) modalRef.current.open = true;
@@ -15,8 +19,8 @@ const ModalSection = () => {
   return (
     <section id="modal">
       <h2 className="section-heading">Modal</h2>
-      <nys-button label="Open Modal" onClick={openModal} />
-      <nys-modal
+      <NysButton label="Open Modal" onNysClick={openModal} />
+      <NysModal
         ref={modalRef}
         heading="Update Available"
         subheading="Version 2.0 is ready to install"
@@ -26,11 +30,15 @@ const ModalSection = () => {
           update now? Your current session will be saved.
         </p>
         <div slot="actions">
-          <nys-button label="Not now" variant="outline" onClick={closeModal} />
-          <nys-button label="Update" onClick={closeModal} />
+          <NysButton
+            label="Not now"
+            variant="outline"
+            onNysClick={closeModal}
+          />
+          <NysButton label="Update" onNysClick={closeModal} />
         </div>
-      </nys-modal>
-      <nys-divider />
+      </NysModal>
+      <NysDivider />
     </section>
   );
 };

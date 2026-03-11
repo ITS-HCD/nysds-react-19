@@ -1,40 +1,77 @@
+import {
+  NysCheckbox,
+  NysCheckboxgroup,
+  NysRadiobutton,
+  NysRadiogroup,
+  NysToggle,
+  NysDivider,
+} from "@nysds/components/react";
+
 const SelectionControlsSection = () => (
   <section id="selection-controls">
     <h2 className="section-heading">Selection Controls</h2>
     <div className="component-grid">
-      <nys-checkbox
+      <NysCheckbox
         label="I agree to the terms of service"
         name="terms"
         value="agreed"
       />
 
-      <nys-checkboxgroup
+      <NysCheckboxgroup
         label="Favorite NY landmarks"
         description="Select all that apply"
       >
-        <nys-checkbox name="landmarks" label="Adirondack Mountains" value="adirondacks" />
-        <nys-checkbox name="landmarks" label="Niagara Falls" value="niagara" />
-        <nys-checkbox name="landmarks" label="Statue of Liberty" value="liberty" />
-        <nys-checkbox name="landmarks" label="Central Park" value="centralpark" />
-      </nys-checkboxgroup>
+        <NysCheckbox
+          name="landmarks"
+          label="Adirondack Mountains"
+          value="adirondacks"
+        />
+        <NysCheckbox
+          name="landmarks"
+          label="Niagara Falls"
+          value="niagara"
+        />
+        <NysCheckbox
+          name="landmarks"
+          label="Statue of Liberty"
+          value="liberty"
+        />
+        <NysCheckbox
+          name="landmarks"
+          label="Central Park"
+          value="centralpark"
+        />
+      </NysCheckboxgroup>
 
-      <nys-radiogroup
+      <NysRadiogroup
         label="Preferred contact method"
         description="Choose one"
         name="contact"
       >
-        <nys-radiobutton name="contact" label="Email" value="email" />
-        <nys-radiobutton name="contact" label="Phone" value="phone" />
-        <nys-radiobutton name="contact" label="Mail" value="mail" />
-      </nys-radiogroup>
+        <NysRadiobutton
+          name="contact"
+          label="Email"
+          value="email"
+        />
+        <NysRadiobutton
+          name="contact"
+          label="Phone"
+          value="phone"
+        />
+        <NysRadiobutton
+          name="contact"
+          label="Mail"
+          value="mail"
+        />
+      </NysRadiogroup>
 
-      <nys-toggle
+      <NysToggle
         label="Enable email notifications"
         name="notifications"
         value="on"
       />
     </div>
-    <nys-divider />
+    <NysDivider />
   </section>
 );
 

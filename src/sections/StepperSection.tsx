@@ -1,13 +1,19 @@
+import {
+  NysStepper,
+  NysStep,
+  NysDivider,
+} from "@nysds/components/react";
+
 const StepperSection = () => (
   <section id="stepper">
     <h2 className="section-heading">Stepper</h2>
-    <nys-stepper label="Application Process">
-      <nys-step label="Personal Info" />
-      <nys-step label="Documents" current />
-      <nys-step label="Review" />
-      <nys-step label="Submit" />
-    </nys-stepper>
-    <nys-divider />
+    <NysStepper label="Application Process">
+      <NysStep label="Personal Info" />
+      <NysStep label="Documents" current />
+      <NysStep label="Review" />
+      <NysStep label="Submit" />
+    </NysStepper>
+    <NysDivider />
   </section>
 );
 

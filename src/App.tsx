@@ -11,12 +11,23 @@ import PaginationSection from "./sections/PaginationSection";
 import StepperSection from "./sections/StepperSection";
 import "./App.css";
 
+
+import {
+  NysSkipnav,
+  NysUnavHeader,
+  NysGlobalHeader,
+  NysGlobalFooter,
+  NysUnavFooter,
+  NysBacktotop,
+} from "@nysds/components/react";
+
+
 function App() {
   return (
     <>
-      <nys-skipnav />
-      <nys-unavheader />
-      <nys-globalheader
+      <NysSkipnav />
+      <NysUnavHeader />
+      <NysGlobalHeader
         appName="NYSDS React 19 Showcase"
         agencyName="New York State"
       >
@@ -26,14 +37,15 @@ function App() {
           <li><a href="#forms">Forms</a></li>
           <li><a href="#data-display">Data Display</a></li>
         </ul>
-      </nys-globalheader>
+      </NysGlobalHeader>
 
       <main id="main-content" className="nys-flex-1">
         <div className="main-content">
           <h1>NYSDS Component Showcase</h1>
           <p>
-            React 19 native custom element support — no{" "}
-            <code>@lit/react</code> wrappers needed.
+            React 19
+           <br/>
+            Ready to go React wrapped components provided by NYSDS 😉
           </p>
 
           <AlertsSection />
@@ -50,7 +62,7 @@ function App() {
         </div>
       </main>
 
-      <nys-globalfooter agencyName="New York State">
+      <NysGlobalFooter agencyName="New York State">
         <ul>
           <li>
             <a href="https://ny.gov">NY.gov</a>
@@ -59,9 +71,9 @@ function App() {
             <a href="https://designsystem.ny.gov">NYSDS</a>
           </li>
         </ul>
-      </nys-globalfooter>
-      <nys-unavfooter />
-      <nys-backtotop />
+      </NysGlobalFooter>
+      <NysUnavFooter />
+      <NysBacktotop />
     </>
   );
 }
