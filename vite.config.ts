@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  // base: "/nysds-react-19/",
+  base: "/nysds-react-19/",
 
 });
